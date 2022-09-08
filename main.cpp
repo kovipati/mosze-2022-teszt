@@ -3,27 +3,28 @@
 
 #include <iostream>
 
-const int N_ELEMENTS = 100; //felesleges a constexpr, nem kell hogy ez az érték futásidõben változzon
+const int N_ELEMENTS = 100; //felesleges a constexpr, nem kell hogy ez az ï¿½rtï¿½k futï¿½sidï¿½ben vï¿½ltozzon
 
 int main()
 {
-    int* b = new int[N_ELEMENTS]; //Helytelen hivatkozás, helyes: N_ELEMENTS, nincs pointer
-    std::cout << "1-100 ertekek duplazasa" << std::endl; //cout stringet vár, helyes használat: "1-100 ertekek duplazasa", sor nincs lezárva ;-vel
+    int* b = new int[N_ELEMENTS]; //Helytelen hivatkozï¿½s, helyes: N_ELEMENTS, nincs pointer
+    std::cout << "1-100 ertekek duplazasa" << std::endl; //cout stringet vï¿½r, helyes hasznï¿½lat: "1-100 ertekek duplazasa", sor nincs lezï¿½rva ;-vel
     for (int i = 0; i < N_ELEMENTS; i++) //for helyesen: for (int i = 1;i <= N_ELEMENTS; i++)
         {
-            b[i] = (i+1) * 2; //értékadás  ==
+            b[i] = (i+1) * 2; //ï¿½rtï¿½kadï¿½s  ==
         }
     for (int i = 0; i < N_ELEMENTS; i++)//for helyesen i<=100
         {
             std::cout << "Ertek: " << b[i] << std::endl;//helyes + << i illetve /n
         }
     std::cout << "Atlag szamitasa: " << std::endl;
-    int atlag = 0;//nincs inicializálva
+    int atlag = 0;//nincs inicializï¿½lva
     for (int i = 0; i < N_ELEMENTS; i++)//; hianyzik
     {
         atlag += b[i];
     }
     atlag /= N_ELEMENTS;
     std::cout << "Atlag: " << atlag << std::endl;
+    std::cout << "valami" << std::endl;
     return 0;
 }
